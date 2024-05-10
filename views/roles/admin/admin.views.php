@@ -6,6 +6,6 @@
     <title>Empresa</title>
 </head>
 <body>
-    <h1>Estoy en la vista Empresa</h1>
+    <h1>Estoy en la vista del Administrador</h1>
 </body>
 </html>
