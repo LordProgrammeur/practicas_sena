@@ -21,14 +21,15 @@
         public function getRolCode(){
             return $this->rol_code;
         }
-        //nombre del rol
+        //Nombre del rol
         public function setRolName($rol_name){
             $this->rol_name = $rol_name;
         }
         public function getRolName(){
             return $this->rol_name;
         }
-        //codigo usuario
+        //Codigo usuario
+
         public function setUsercode($user_code){
             $this->user_code = $user_code;
         }
