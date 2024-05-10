@@ -5,7 +5,17 @@ class Users {
         $rol = new User;
         $rol->setRolCode("ABC123");
         echo "Codigo Rol: ". $rol->getRolCode(), "<hr>";
-        echo "Nombre Rol: ";
+    
+        $rol->setRolName("admin");
+        echo "Nombre Rol: ". $rol->getRolName(), "<hr>";
+
+        $rol->setUserName("12345");
+        echo "Codigo usuario: ". $rol->getUserName(), "<hr>";
+
+        $rol->setUserName("Felipe");
+        echo "Nombre usuario: ". $rol->getUserName(), "<hr>";
     }
+
+
 }
 ?>
