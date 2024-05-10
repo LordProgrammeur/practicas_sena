@@ -45,6 +45,51 @@
         public function getUserName(){
             return $this->user_name;
         }
+
+        //Apellido usuario
+
+        public function setUserLastName($user_lastname){
+            $this->user_lastname = $user_lastname;
+        }
+        public function getUserLastName(){
+            return $this->user_lastname;
+        }
+
+        //Id usuario
+
+        public function setUserId($user_id){
+            $this->user_id = $user_id;
+        }
+        public function getUserId(){
+            return $this->user_id;
+        }
+
+        //Email usuario
+
+        public function setUserEmail($user_email){
+            $this->user_email = $user_email;
+        }
+        public function getUserEmail(){
+            return $this->user_email;
+        }
+
+        //Password usuario
+
+        public function setUserPassword($user_pass){
+            $this->user_pass = $user_pass;
+        }
+        public function getUserPassword(){
+            return sha1($this->user_pass);
+        }
+
+        //Estado usuario
+
+        public function setUserState($user_state){
+            $this->user_state = $user_state;
+        }
+        public function getUserState(){
+            return $this->user_state;
+        }
     }
     //4ta parte:precistencia a la base de datos
 ?>
