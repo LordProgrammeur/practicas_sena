@@ -1,38 +1,45 @@
 <?php
-require_once "models/User.php"; //aca se llama como una pegatina a landing y lo pega al frente
-class Users {
+class Users{
     public function main(){
+
+        // Objeto01 Rol
         $rol = new User;
-        $user = new User;
-
-        $rol->setRolCode("ABC123");
-        echo "Codigo Rol: ". $rol->getRolCode(), "<hr>";
-    
+        $rol->setRolCode("01");
+        echo "Código Rol: ", $rol->getRolCode(), "<hr>";
         $rol->setRolName("admin");
-        echo "Nombre Rol: ". $rol->getRolName(), "<hr>";
+        echo "Nombre Rol: ", $rol->getRolName(), "<hr>";
 
-        $user->setUserName("12345");
-        echo "Codigo usuario: ". $user->getUserName(), "<hr>";
-
-        $user->setUserName("Felipe");
-        echo "Nombre usuario: ". $user->getUserName(), "<hr>";
-
-        $user->setUserLastName("Rincon");
-        echo "Apellido usuario: ". $user->getUserLastName(), "<hr>";
-
-        $user->setUserId("101425263");
-        echo "Id usuario: ". $user->getUserId(), "<hr>";
-
-        $user->setUserEmail("david__91@gmail.com");
-        echo "Email usuario: ". $user->getUserEmail(), "<hr>";
-
-        $user->setUserPassword("gil202030.");
-        echo "Password usuario: ". $user->getUserPassword(), "<hr>";
-
+        // Objeto02 Usuario
+        $user = new User;
+        $user->setUserCode("user_123");
+        echo "Código Usuario: ", $user->getUserCode(), "<hr>";
+        $user->setUserName("Pepito");
+        echo "Nombre Usuario: ", $user->getUserName(), "<hr>";
+        $user->setUserLastName("Perez");
+        echo "Apellido Usuario: ", $user->getUserLastName(), "<hr>";
+        $user->setUserId(123456789);
+        echo "Identificación Usuario: ", $user->getUserId(), "<hr>";
+        $user->setUserEmail("pepito@perez.com");
+        echo "Correo Usuario: ", $user->getUserEmail(), "<hr>";
+        $user->setUserPass(12345);
+        echo "Contraseña Usuario: ", $user->getUserPass(), "<hr>";
         $user->setUserState(True);
-        echo "Estado usuario: ". $user->getUserState(), "<hr>";
+        echo "Estado Usuario: ", $user->getUserState(), "<hr>";
+
+        // Objeto03 Constructor
+        $userconst = new User(
+            "02",
+            "customer",
+            "user_567",
+            "Marinita",
+            "García",
+            "987654321",
+            "marinita@garcia.com",
+            sha1("12345"),
+            True
+        );
+        print_r($userconst);
+
     }
-
-
 }
 ?>
