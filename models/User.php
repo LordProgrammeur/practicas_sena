@@ -48,6 +48,17 @@
             $this->user_state = $user_state;
         }
 
+        public function __construct8($rol_code,$user_code,$user_name,$user_lastname,$user_id,$user_email,$user_pass,$user_state){
+            $this->rol_code = $rol_code;
+            $this->user_code = $user_code;
+            $this->user_name = $user_name;
+            $this->user_lastname = $user_lastname;
+            $this->user_id = $user_id;
+            $this->user_email = $user_email;
+            $this->user_pass = $user_pass;
+            $this->user_state = $user_state;
+        }
+
         // 3ra Parte: Setter y Getters
         # Código Rol
         public function setRolCode($rol_code){
@@ -56,6 +67,7 @@
         public function getRolCode(){
             return $this->rol_code;
         }
+
         # Nombre Rol
         public function setRolName($rol_name){
             $this->rol_name = $rol_name;
@@ -189,6 +201,25 @@
             } catch (Exception $e) {
                 die($e->getMessage());
             }            
+        }
+
+        #Registrar Usuario
+        public function create_user(){
+            try {
+                $sql = 'INSERT INTO USERS VALUES (:rol_code,:user_code,:user_name,:user_lastname,:user_id,:user_email,:user_pass,:user_state)';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('rol_code', $this->getRolCode());                
+                $stmt->bindValue('user_code', $this->getUserCode());
+                $stmt->bindValue('user_name', $this->getUserName());
+                $stmt->bindValue('user_lastname', $this->getUserLastName());
+                $stmt->bindValue('user_id', $this->getUserId());
+                $stmt->bindValue('user_email', $this->getUserEmail());
+                $stmt->bindValue('user_pass', sha1($this->getUserPass()));
+                $stmt->bindValue('user_state', $this->getUserState());
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
         }
     }
 ?>

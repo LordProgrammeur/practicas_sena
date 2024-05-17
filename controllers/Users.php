@@ -46,7 +46,7 @@
         // Controlador Crear Rol
         public function rolCreate(){        
             $rol = new User;        
-            $rol->setRolName("seller");
+            $rol->setRolName("customer");
             $rol->create_rol();
         }
 
@@ -59,7 +59,7 @@
 
         // Controlador Actualizar Rol
         public function rolUpdate(){
-            $rolCode = 3;
+            $rolCode = 1;
             // Objeto_01. Crear el objeto a partir del registro db, según petición
             $rolId = new User;
             $rolId = $rolId->getrol_bycode($rolCode);
@@ -68,15 +68,25 @@
             // Objeto_02. Actualizar el usuario en la db, a partir del Objeto_01
             $rolUpdate = new User;
             $rolUpdate->setRolCode($rolCode);
-            $rolUpdate->setRolName("vendedor");
+            $rolUpdate->setRolName("admin");
             $rolUpdate->update_rol();
         }
         
         // Controlador Eliminar Rol
         public function rolDelete(){
-            $rolCode = 3;
+            $rolCode = 2;
             $rol = new User;
             $rol->delete_rol($rolCode);
         }
+
+        //Controlador Crear Usuario
+        public function userCreate(){        
+            $user = new User(3,null, "nicolas","ramos","091759085","nic_rts@gmail.com","52085705",1);        
+            
+            $user->create_user();
+            // print_r($user);
+            
+        }
+        
     }
 ?>
